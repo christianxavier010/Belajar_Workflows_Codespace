@@ -1,0 +1,3 @@
+{
+  "postStartCommand": "sudo tailscale up --authkey $TAILSCALE_AUTHKEY --hostname codespace-dev"
+}
