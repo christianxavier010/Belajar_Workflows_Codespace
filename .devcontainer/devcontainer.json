@@ -1,3 +1,5 @@
 {
-  "postStartCommand": "sudo tailscale up --authkey $TAILSCALE_AUTHKEY --hostname codespace-dev"
+  "name": "Codespace with Tailscale Userspace",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "postStartCommand": "bash .devcontainer/start-tailscale.sh"
 }
