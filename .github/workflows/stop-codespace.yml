@@ -1,0 +1,19 @@
+name: Stop Codespace Evening
+
+on:
+  schedule:
+    - cron: '55 10 * * 1-5'  # 17:00 WIB (Mon-Fri)
+  workflow_dispatch:
+
+jobs:
+  stop:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Stop Codespace via API
+        env:
+          GH_TOKEN: ${{ secrets.CODESPACE_PAT }}
+        run: |
+          gh api \
+            -X POST \
+            /user/codespaces/miniature-acorn-r4q75vvqwg9rhx465/start
