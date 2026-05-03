@@ -1,6 +1,6 @@
 {
   "name": "Codespace Tailscale Userspace",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "postCreateCommand": "curl -L https://pkgs.tailscale.com/stable/tailscale_1.66.4_amd64.tgz | tar xz && sudo mv tailscale_*/tailscale* /usr/local/bin/",
-  "postStartCommand": "touch catatan.txt"
+  "postCreateCommand": "sudo tailscaled --tun=userspace-networking &",
+  "postStartCommand": "sudo tailscaled --tun=userspace-networking &"
 }
