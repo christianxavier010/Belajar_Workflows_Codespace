@@ -1,5 +1,6 @@
 {
-  "name": "Codespace with Tailscale Userspace",
+  "name": "Codespace Tailscale",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "postStartCommand": "bash .devcontainer/start-tailscale.sh"
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y supervisor",
+  "postStartCommand": "sudo supervisord -c .devcontainer/supervisord.conf"
 }
